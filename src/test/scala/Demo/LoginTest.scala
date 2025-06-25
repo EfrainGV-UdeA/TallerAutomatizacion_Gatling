@@ -6,7 +6,7 @@ import Demo.Data._
 
 class LoginTest extends Simulation{
 
-  // 1 Http Conf
+  // 1 Http Conf //hola
   val httpConf = http.baseUrl(url)
     .acceptHeader("application/json")
     //Verificar de forma general para todas las solicitudes
