@@ -6,7 +6,7 @@ import Demo.Data._
 
 class LoginTest extends Simulation{
 
-  // 1 Http Conf //hola
+  // 1 Http Conf
   val httpConf = http.baseUrl(url)
     .acceptHeader("application/json")
     //Verificar de forma general para todas las solicitudes
@@ -16,7 +16,7 @@ class LoginTest extends Simulation{
   val scn = scenario("Login").
     exec(http("login")
       .post(s"users/login")
-         .body(StringBody("""{"email": "${email}", "password": "${password}"}""")).asJson
+         .body(StringBody(s"""{"email": "$email", "password": "$password"}""")).asJson
        //Recibir información de la cuenta
       .check(status.is(200))
       .check(jsonPath("$.token").saveAs("authToken"))
